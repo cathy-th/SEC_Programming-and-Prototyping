@@ -1,0 +1,228 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="learn.expandedmetrics.com">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <title>Plate Waste</title>
+
+    <!-- Socials -->
+    <meta property="og:title" content="Plate Waste" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Displays the amount of food waste over a span of time to help PG residents and owners understand the quantity of food being wasted each day  " />
+    <meta property="og:image" content="./images/plate_pic.png" />
+    <meta property="og:url" content=" .com" />
+    <meta name="twitter:title" content="Plate Waste ">
+    <meta name="twitter:description" content="Displays the amount of food waste over a span of time to help PG residents and owners understand the quantity of food being wasted each day ">
+    <meta name="twitter:image" content="./images/plate_pic.png">
+    
+
+    <!-- CSS -->
+    <link href="A3.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./font/Oswald_transfonter.org-20230907-051732/font.css">
+            
+    <!--JavaScript -->
+    <script type="text/javascript" src="A3.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./images/plate_pic.png"> 
+    <title>Food waste</title>
+  
+    
+    
+     
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="A3.css">
+        <script src="A3.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    </head>
+    <body>
+                  <!-- Hidden Section -->
+          <div id="hiddenSection" style="display: none;">
+            <!-- Password Section -->
+            <div id="passwordSection">
+              <input type="password" class="input-box" id="passwordInput" placeholder="Enter Password">
+              <button class="button" onclick="checkPassword()">Submit</button>
+              <p id="passwordMessage"></p>
+              <p id="passwurd">the password...is password</p>
+            </div>
+
+            <br>
+
+            <!--Hidden section unlocked -->
+            <div id="contentSection" style="display: none;">
+              <!-- Input for Number of Portions Wasted -->
+              <input type="number" class="input-box" id="plateInput" placeholder="Number of portions wasted">
+              <button class="button" onclick="updatePlates()">Update</button>
+              <br>
+              <br>
+              <br>
+
+              <!-- Button Container for Food Waste Input -->
+              <div class="button-container">
+                <!-- Input for Today's Food Waste (grams) -->
+                <input type="number" class="input-box" id="foodWasteInput" placeholder="Today's Food Waste (grams)">
+                <button class="button" onclick="updateFoodWaste()">Update</button>
+                <br>
+                <br>
+                
+                <!-- Reset Cumulative Weight Button -->
+                <div id="resetButton">
+                  <button class="button" onclick="resetCumulativeWeight()">Reset Cumulative Weight</button>
+                </div>
+                <br>
+                <br>
+
+                <!-- Save Button with Link -->
+                <button class="button"> <a href="./A3.html"> Save</a></button>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle Button -->
+          <div id="button_hiddenSection">
+            <button id="toggleButton" onclick="toggleHiddenSection()">
+              <span id="arrowIcon">&#9660;</span> <!-- Downward arrow entity -->
+            </button>
+          </div>
+
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+            <!-- First Slide -->
+            <div class="mySlides fade">
+              <div id="big_cont" class="container">
+                <!-- Plate Rotation Image -->
+                <div id="plateRotate">
+                  <img class="rotate" src="./images/plate_pic.png" alt="logo">
+                </div>
+                
+                <!-- Total Plate Waste Information -->
+                <div id="weight_statement">
+                  <p id="cumulative">TOTAL PLATE WASTE</p>
+                  <p id="weight">SINCE 6/8/23</p>
+                  <p id="cumulativeWeightValue">0 g</p>
+                </div>
+              </div>
+              <br>
+              <br>
+              
+              
+              <!-- Yesterday's Plate Waste -->
+              <div id="yestWeight">
+                <p id="totalPlateWaste">TOTAL PLATE WASTE</p>
+                <p id="yesterday">YESTERDAY</p>
+                <p id="countUpValue">0 g</p>
+              </div>
+            </div>
+
+            <!-- Second Slide -->
+            <div class="mySlides fade">
+              <div id="slide1"> 
+                
+               
+                <div id="header">
+                  <div>
+                    <p id="head">NUMBER OF PORTIONS WASTED</p>
+                    <p id="heading">YESTERDAY</p>
+                  </div>
+                  <span id="plateCount"></span>
+                </div>
+                <br>
+                
+                <!-- Chart Container -->
+                <div id="chart-container">
+                  <div id="chart">
+                    <!-- The Plate Chart -->
+                  </div>
+                </div>
+              
+                <!-- Navigation Dots -->
+                <div class="dot-container" style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- External Scripts -->
+          <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
+  
+    </body>
+    </html>
+
+
+
+    <!-- DOM KEY
+
+      - HTML
+  - HEAD
+    - META
+    - META
+    - META
+    - META
+    - TITLE
+    - Meta and Link tags
+    - SCRIPT
+    - External script tags
+  - BODY
+    - DIV id="hiddenSection" (display: none)
+      - DIV id="passwordSection"
+        - INPUT
+        - BUTTON
+        - P
+        - P
+      - DIV id="contentSection" (display: none)
+        - INPUT
+        - BUTTON
+        - Input fields and buttons
+        - DIV id="resetButton"
+          - BUTTON
+        - BUTTON
+          - A href="./A3.html"
+    - DIV id="button_hiddenSection"
+      - BUTTON id="toggleButton" onclick="toggleHiddenSection()"
+        - SPAN id="arrowIcon"
+    - DIV class="slideshow-container"
+      - DIV class="mySlides fade"
+        - DIV id="big_cont" class="container"
+          - IMG
+          - DIV id="weight_statement"
+            - P
+            - P
+            - P
+        - DIV id="yestWeight"
+          - P
+          - P
+          - P
+      - DIV class="mySlides fade"
+        - DIV id="slide1"
+          - DIV id="header"
+            - DIV
+              - P
+              - P
+            - SPAN id="plateCount"
+          - DIV id="chart-container"
+            - DIV id="chart"
+          - DIV class="dot-container" (style="text-align:center")
+            - SPAN class="dot" onclick="currentSlide(1)"
+            - SPAN class="dot" onclick="currentSlide(2)"
+    - SCRIPT src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+
+-->
+
+
+
+
+ 
